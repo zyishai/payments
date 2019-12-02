@@ -5,6 +5,7 @@ import '../public/styles/index.scss';
 import { Box, Typography } from '@material-ui/core';
 import FavoriteIcon from '@material-ui/icons/Favorite';
 import CopyrightIcon from '@material-ui/icons/Copyright';
+import lang from '../src/lang';
 
 const Home: StatelessPage<{ authorName: string }> = ({ authorName }) => (
   <div className="page">
@@ -19,11 +20,11 @@ const Home: StatelessPage<{ authorName: string }> = ({ authorName }) => (
     </Box>
     <Box py={2}>
       <Typography variant='body2' color='textSecondary' align='center'>
-        Built with{' '}
+        {lang.footer.builtWith + ' '}
         {
           <FavoriteIcon fontSize='inherit' />
         }
-        {' '}by {authorName}
+        {' ' + lang.footer.by + ' ' + authorName}
       </Typography>
       <Typography variant='body2' color='textSecondary' align='center'>
         <CopyrightIcon fontSize='inherit' />{' ' + new Date().getFullYear()}

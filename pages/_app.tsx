@@ -4,6 +4,7 @@ import CssBaseline from '@material-ui/core/CssBaseline';
 import { ThemeProvider } from '@material-ui/core/styles';
 import { AppBar, Toolbar, Typography } from '@material-ui/core';
 import { theme } from '../src/theme';
+import lang from '../src/lang';
 
 class MaterialApp extends App {
     render() {
@@ -16,7 +17,7 @@ class MaterialApp extends App {
                     <AppBar position="static">
                         <Toolbar>
                             <Typography variant="h6">
-                                Demo App
+                                {lang.appBarTitle}
                             </Typography>
                         </Toolbar>
                     </AppBar>
