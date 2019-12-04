@@ -7,7 +7,7 @@ import { theme } from '../src/theme';
 import lang from '../src/lang';
 
 import '../public/styles/index.scss'; // import global styles
-import { ProfileMenu } from '../components/profile-menu';
+import { ProfileMenu } from '../components/appbar-menu';
 class MaterialApp extends App {
     render() {
         const { Component, pageProps } = this.props;
@@ -16,7 +16,7 @@ class MaterialApp extends App {
             <>
                 <CssBaseline />
                 <ThemeProvider theme={theme}>
-                    <AppBar position="static">
+                    <AppBar position="static" elevation={2}>
                         <Toolbar>
                             <Typography variant="h6">
                                 {lang.appBarTitle}
