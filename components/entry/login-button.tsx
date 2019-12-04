@@ -1,7 +1,7 @@
 import React from 'react';
 import Router from 'next/router';
 import { Button, makeStyles } from "@material-ui/core"
-import { signIn } from '../src/firebase';
+import { signIn } from '../../src/firebase';
 import { ButtonProps } from '@material-ui/core/Button';
 import { GoogleIcon } from './google-icon';
 

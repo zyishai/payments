@@ -4,7 +4,7 @@ import { useRouter } from 'next/router';
 import { Box, Typography } from '@material-ui/core';
 import FavoriteIcon from '@material-ui/icons/Favorite';
 import CopyrightIcon from '@material-ui/icons/Copyright';
-import { LoginButton } from '../components/login-button';
+import { LoginButton } from '../components/entry/login-button';
 import lang from '../src/lang';
 
 const Home: StatelessPage<{ authorName: string }> = ({ authorName }) => {
