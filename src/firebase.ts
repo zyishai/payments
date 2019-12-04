@@ -1,5 +1,5 @@
-import firebaseApp from 'firebase/app';
-import { auth } from 'firebase';
+import * as firebase from 'firebase/app';
+import 'firebase/auth';
 import { authState, user } from 'rxfire/auth';
 
 const firebaseConfig = {
@@ -13,18 +13,16 @@ const firebaseConfig = {
     measurementId: process.env.FIREBASE_MEASUREMENT_ID
 }
 
-let app: firebaseApp.app.App;
-if (process.env.NODE_ENV === 'development') {
-    if (firebaseApp.apps.length) {
-        app = firebaseApp.apps[0];
-    } else {
-        app = firebaseApp.initializeApp(firebaseConfig); 
-    }
-} else {
-    app = firebaseApp.initializeApp(firebaseConfig);
+let app: firebase.app.App;
+
+try {
+    app = firebase.app(); // try to retrieve the default app.
+} catch (err) {
+    app = firebase.initializeApp(firebaseConfig);
 }
 
 // authentication
+const auth = firebase.auth;
 const authState$ = authState(auth());
 const user$ = user(auth());
 const signIn = () => auth().signInWithPopup(new auth.GoogleAuthProvider()).then(console.log).catch(console.error);
