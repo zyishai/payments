@@ -1,5 +1,5 @@
 import React from 'react';
-import { ButtonBase, createStyles, Theme } from '@material-ui/core';
+import { ButtonBase, createStyles, Theme, Color } from '@material-ui/core';
 import { makeStyles } from '@material-ui/styles';
 
 const useStyles = makeStyles<Theme, Props>((theme: Theme) => 
@@ -10,19 +10,19 @@ const useStyles = makeStyles<Theme, Props>((theme: Theme) =>
             paddingBottom: theme.spacing(1),
             paddingLeft: theme.spacing(2),
             margin: theme.spacing(1),
-            // backgroundColor: theme.palette.primary.main,
-            color: props => props.color,
-            border: props => `1px solid ${props.borderColor || props.color}`,
-            fontSize: theme.typography.fontSize,
-            width: theme.spacing(3) * 5,
-            height: theme.spacing(3) * 5,
-            borderRadius: theme.shape.borderRadius,
+            backgroundColor: props => props.baseColor[900],
+            color: props => props.onHoverTextColor,
+            border: props => `1px solid ${props.borderColor || props.baseColor[900]}`,
+            fontSize: theme.typography.fontSize * 1.8,
+            width: theme.spacing(4) * 5,
+            height: theme.spacing(4) * 5,
+            borderRadius: theme.shape.borderRadius * 1.8,
             display: 'flex',
             flexDirection: 'column',
             justifyContent: 'space-around',
             transition: '.5s',
             '&:hover': {
-                backgroundColor: props => props.color,
+                backgroundColor: props => props.baseColor[700],
                 color: props => props.onHoverTextColor
             }
         }
@@ -30,7 +30,7 @@ const useStyles = makeStyles<Theme, Props>((theme: Theme) =>
 )
 
 interface Props {
-    color: string;
+    baseColor: Color;
     borderColor?: string;
     onHoverTextColor: string;
 }

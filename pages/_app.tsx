@@ -16,7 +16,7 @@ class MaterialApp extends App {
             <>
                 <CssBaseline />
                 <ThemeProvider theme={theme}>
-                    <AppBar position="static" elevation={2}>
+                    <AppBar position="static" elevation={2} color='default'>
                         <Toolbar>
                             <Typography variant="h6">
                                 {lang.appBarTitle}

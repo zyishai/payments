@@ -6,10 +6,10 @@ const lang = {
     },
     loginButtonLabel: 'התחבר/י דרך גוגל',
     logoutButtonLabel: 'התנתק/י',
-    studentsManagementLabel: 'ניהול תלמידים',
-    paymentsManagementLabel: 'ניהול תשלומים',
-    scheduleManagementLabel: 'ניהול לו״ז',
-    topicsManagementLabel: 'ניהול נושאים',
+    studentsManagementLabel: 'תלמידים',
+    paymentsManagementLabel: 'תשלומים',
+    scheduleManagementLabel: 'לו״ז',
+    topicsManagementLabel: 'נושאים',
     profileHeaderGreeting: 'ברוך הבא'
 }
 
