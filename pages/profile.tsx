@@ -20,7 +20,6 @@ const useStyles = makeStyles((theme: Theme) =>
         hero: {
             flex: 1,
             position: 'relative',
-            paddingTop: theme.spacing(8),
         },
         background: {
             position: 'absolute',
@@ -29,6 +28,7 @@ const useStyles = makeStyles((theme: Theme) =>
             right: 0,
             left: 0,
             backgroundImage: 'url("/images/pencils.jpg")',
+            backgroundSize: 'cover',
             backgroundPosition: '22% 0%',
             opacity: 0.4,
             filter: 'alpha(opacity=40)'

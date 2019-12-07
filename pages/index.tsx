@@ -21,7 +21,7 @@ const Home: StatelessPage<{ authorName: string }> = ({ authorName }) => {
         </LoginButton>
       </Box>
       <Box py={2}>
-        <Typography variant='body2' color='textSecondary' align='center'>
+        <Typography variant='body2' color='secondary' align='center'>
           {lang.footer.builtWith + ' '}
           {
             <FavoriteIcon fontSize='inherit' />

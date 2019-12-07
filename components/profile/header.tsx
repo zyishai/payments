@@ -6,7 +6,12 @@ import lang from '../../src/lang';
 const useStyles = makeStyles((theme: Theme) =>
     createStyles({
         root: {
-            paddingTop: theme.spacing(5),
+            [theme.breakpoints.up('lg')]: {
+                paddingTop: theme.spacing(7),
+            },
+            [theme.breakpoints.down('md')]: {
+                paddingTop: theme.spacing(4),
+            },
             paddingBottom: theme.spacing(5)
         }
     })
