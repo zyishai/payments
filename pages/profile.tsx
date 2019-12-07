@@ -1,4 +1,5 @@
 import React from 'react';
+import Link from 'next/link';
 import { withAuth } from '../guards/auth';
 import { User } from 'firebase';
 import { MenuButton } from '../components/profile/menu-button';
@@ -51,21 +52,33 @@ const ProfilePage: StatelessPage<{ user?: User }> = ({ user, ...props }) => {
             <div className={styles.background}></div>
             <Header name={user && user.displayName} />
             <div className={styles.grid}>
-                <MenuButton baseColor={indigo} onHoverTextColor={theme.palette.primary.contrastText}>
-                    <FaceIcon className={styles.icon} />
-                    {lang.studentsManagementLabel}
+                <MenuButton 
+                    baseColor={indigo} 
+                    onHoverTextColor={theme.palette.primary.contrastText}
+                    href='/manage/students'>
+                        <FaceIcon className={styles.icon} />
+                        {lang.studentsManagementLabel}
                 </MenuButton>
-                <MenuButton baseColor={pink} onHoverTextColor={theme.palette.primary.contrastText}>
-                    <PaymentIcon className={styles.icon} />
-                    {lang.paymentsManagementLabel}
+                <MenuButton 
+                    baseColor={pink} 
+                    onHoverTextColor={theme.palette.primary.contrastText}
+                    href=''>
+                        <PaymentIcon className={styles.icon} />
+                        {lang.paymentsManagementLabel}
                 </MenuButton>
-                <MenuButton baseColor={green} onHoverTextColor={theme.palette.primary.contrastText}>
-                    <ScheduleIcon className={styles.icon} />
-                    {lang.scheduleManagementLabel}
+                <MenuButton 
+                    baseColor={green} 
+                    onHoverTextColor={theme.palette.primary.contrastText}
+                    href=''>
+                        <ScheduleIcon className={styles.icon} />
+                        {lang.scheduleManagementLabel}
                 </MenuButton>
-                <MenuButton baseColor={orange} onHoverTextColor={theme.palette.primary.contrastText}>
-                    <MenuBookIcon className={styles.icon} />
-                    {lang.topicsManagementLabel}
+                <MenuButton 
+                    baseColor={orange} 
+                    onHoverTextColor={theme.palette.primary.contrastText}
+                    href=''>
+                        <MenuBookIcon className={styles.icon} />
+                        {lang.topicsManagementLabel}
                 </MenuButton>
             </div>
         </div>

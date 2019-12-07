@@ -1,6 +1,7 @@
 import React from 'react';
 import { ButtonBase, createStyles, Theme, Color } from '@material-ui/core';
 import { makeStyles } from '@material-ui/styles';
+import Link from 'next/link';
 
 const useStyles = makeStyles<Theme, Props>((theme: Theme) => 
     createStyles({
@@ -28,20 +29,30 @@ const useStyles = makeStyles<Theme, Props>((theme: Theme) =>
         }
     })
 )
+const RefButton = React.forwardRef<unknown, Props>(({ children, ...props }, ref) => {
+    const styles = useStyles(props);
+    return (
+        <ButtonBase
+            classes={{
+                root: styles.root
+            }}
+            innerRef={ref}
+            {...props}
+        >
+            {children}
+        </ButtonBase>
+    );
+});
 
 interface Props {
     baseColor: Color;
     borderColor?: string;
     onHoverTextColor: string;
 }
-export const MenuButton: React.FC<Props> = ({ children, ...props }) => {
-    const styles = useStyles(props);
+export const MenuButton: React.FC<Props & { href: string }> = ({ href, ...props }) => {
     return (
-        <ButtonBase
-            classes={{
-                root: styles.root
-            }}>
-            {children}
-        </ButtonBase>
-    );
+        <Link href={href}>
+            <RefButton {...props} />
+        </Link>
+    )
 }
