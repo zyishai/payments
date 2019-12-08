@@ -12,7 +12,7 @@ class MaterialDocument extends Document {
 
     render() {
         return (
-            <Html>
+            <Html lang="iw">
                 <Head>
                     <link rel="shortcut icon" href="/favicon.ico" />
                     <meta
