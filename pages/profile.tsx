@@ -14,7 +14,7 @@ import MenuBookIcon from '@material-ui/icons/MenuBook';
 import lang from '../src/lang';
 import { theme } from '../src/theme';
 import { makeStyles, createStyles, Theme } from '@material-ui/core';
-import { Header } from '../components/profile/header';
+import { Header } from '../components/shared/header';
 
 const useStyles = makeStyles((theme: Theme) => 
     createStyles({
@@ -50,7 +50,7 @@ const ProfilePage: StatelessPage<{ user?: User }> = ({ user, ...props }) => {
     return (
         <div className={styles.hero}>
             <div className={styles.background}></div>
-            <Header name={user && user.displayName} />
+            <Header>{lang.profileHeaderGreeting} {user && user.displayName}</Header>
             <div className={styles.grid}>
                 <MenuButton 
                     baseColor={indigo} 

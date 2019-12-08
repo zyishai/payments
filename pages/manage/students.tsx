@@ -1,8 +1,10 @@
 import React from 'react';
+import { Header } from '../../components/shared/header';
+import lang from '../../src/lang';
 
 const StudentsManagement: StatelessPage = () => {
     return (
-        <h1>Students Management Page</h1>
+        <Header>{lang.studentManagementHeader}</Header>
     );
 }
 

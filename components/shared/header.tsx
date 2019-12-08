@@ -17,9 +17,9 @@ const useStyles = makeStyles((theme: Theme) =>
     })
 );
 
-export const Header = ({ name, ...props }) => {
+export const Header = ({ children, ...props }) => {
     const styles = useStyles(props);
     return (
-        <Typography variant='h3' align='center' className={styles.root}>{lang.profileHeaderGreeting} {name}</Typography>
+        <Typography variant='h3' align='center' className={styles.root}>{children}</Typography>
     );
 }

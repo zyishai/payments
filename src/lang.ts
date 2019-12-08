@@ -10,7 +10,8 @@ const lang = {
     paymentsManagementLabel: 'תשלומים',
     scheduleManagementLabel: 'לו״ז',
     topicsManagementLabel: 'נושאים',
-    profileHeaderGreeting: 'ברוך הבא'
+    profileHeaderGreeting: 'ברוך הבא',
+    studentManagementHeader: 'ניהול תלמידים'
 }
 
 export default lang;

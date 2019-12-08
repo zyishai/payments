@@ -7,7 +7,7 @@ import { theme } from '../src/theme';
 import lang from '../src/lang';
 
 import '../public/styles/index.scss'; // import global styles
-import { ProfileMenu } from '../components/appbar-menu';
+import { ProfileMenu } from '../components/core/appbar-menu';
 class MaterialApp extends App {
     render() {
         const { Component, pageProps } = this.props;

@@ -2,8 +2,8 @@ import React, { useEffect, useState } from 'react'
 import { ButtonProps } from '@material-ui/core/Button'
 import Menu, { MenuProps } from '@material-ui/core/Menu'
 import MenuItem from '@material-ui/core/MenuItem'
-import lang from '../src/lang';
-import { user$, signOut } from '../src/firebase';
+import lang from '../../src/lang';
+import { user$, signOut } from '../../src/firebase';
 import { User } from 'firebase';
 import { Button, Avatar } from '@material-ui/core';
 
