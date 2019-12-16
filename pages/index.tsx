@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import Head from 'next/head'
 import { useRouter } from 'next/router';
 import { Box, Typography } from '@material-ui/core';
@@ -12,21 +12,15 @@ import { useObservable } from 'rxjs-hooks';
 const Home: StatelessPage<{ authorName: string }> = ({ authorName }) => {
   const router = useRouter();
   const [isReady, setIsReady] = useState(false);
-  const sub = user$.subscribe(
-    (user) => {
-      if (user) {
-        router.replace('/profile');
-      } else {
-        setIsReady(true);
-      }
+  const user = useObservable(() => user$);
 
-      sub.unsubscribe();
-    },
-    () => {
+  useEffect(() => {
+    if (user) {
+      router.replace('/profile');
+    } else {
       setIsReady(true);
-      sub.unsubscribe();
     }
-  );
+  }, [user]);
   return (
     <div className="page">
       <Head>
