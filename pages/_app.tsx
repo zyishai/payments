@@ -1,5 +1,6 @@
 import React from 'react';
 import App from 'next/app';
+import Link from 'next/link';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import { ThemeProvider } from '@material-ui/core/styles';
 import { AppBar, Toolbar, Typography, Box } from '@material-ui/core';
@@ -18,9 +19,13 @@ class MaterialApp extends App {
                 <ThemeProvider theme={theme}>
                     <AppBar position="static" elevation={2} color='default'>
                         <Toolbar>
-                            <Typography variant="h6">
-                                {lang.appBarTitle}
-                            </Typography>
+                            <Link href="/">
+                                <Typography variant="h6" style={{
+                                    cursor: 'pointer'
+                                }}>
+                                    {lang.appBarTitle}
+                                </Typography>
+                            </Link>
                             <Box flex={1} />
                             <ProfileMenu />
                         </Toolbar>
